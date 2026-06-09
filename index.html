@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Website Linatul Fatimah</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+
+function inputTask(){
+
+  const tugas = prompt("Masukkan tugas:");
+
+  if(tugas === "" || tugas === null){
+    return;
+  }
+
+  document.getElementById("taskInput").value = tugas;
+
+  addTask();
+}
+
+function addTask(){
+
+  const taskInput = document.getElementById("taskInput");
+  const taskDate = document.getElementById("taskDate");
+  const taskList = document.getElementById("taskList");
+
+  const tugas = taskInput.value;
+  const deadline = taskDate.value;
+
+  if(deadline === ""){
+    alert("Pilih deadline terlebih dahulu!");
+    return;
+  }
+
+  const li = document.createElement("li");
+
+li.innerHTML = `
+
+  <div class="task-content">
+    <strong>${tugas}</strong><br>
+    Deadline: ${deadline}
+  </div>
+
+  <button class="delete-btn" onclick="deleteTask(this)">
+    <img src="img/delete.svg" alt="Hapus">
+  </button>
+
+`;
+
+  taskList.appendChild(li);
+
+  taskInput.value = "";
+  taskDate.value = "";
+}
+
+function openDate(){
+
+  const dateInput = document.getElementById("taskDate");
+
+  dateInput.showPicker();
+
+  dateInput.addEventListener("change", function(){
+    addTask();
+  }, { once:true });
+}
+
+</script>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+
+    <h1>
+      Linatul Fatimah Az-Zahra Kusumaningarum
+    </h1>
+
+    <p>
+      Mahasiswa D3 Multimedia Broadcasting
+    </p>
+
+    <img
+      src="img/ellipse-1.png"
+      alt="Foto Lina"
+    >
+
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <a href="#tentang">Tentang</a>
+    <a href="#hobi">Hobi</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#skill">Skill</a>
+     <a href="#magang">Magang</a>
+    <a href="#keahlian">Keahlian</a>
+    <a href="#software">Software</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#organisasi">Organisasi</a>
+    <a href="list-tugas.html">List Tugas</a>
+    <a href="#motivasi">Motivasi</a>
+
+  </nav>
+
+  <!-- TENTANG -->
+  <section class="card" id="tentang">
+
+    <h2>Deskripsi Diri</h2>
+
+    <div class="image">
+      <img src="img/line-18.svg" alt="Line">
+    </div>
+
+    <p>
+      Saya adalah mahasiswa D3 Multimedia Broadcasting di Politeknik Elektronika Negeri Surabaya yak aktif, disiplin, dan memiliki semangat belajar yang tinggi. Saya senang mempelajari hal-hal baru di bidang multimedia dan broadcasting, serta terus mengembangkan kemampuan komunikasi, kerja sama tim, dan kreativitas. Saya siap berkontribusi secara positif dalam lingkungan akademik maupun organisasi serta mampu menjalankan tanggung jawab dengan sikap profesional
+    </p>
+
+  </section>
+
+  <!-- HOBI -->
+  <section class="card" id="hobi">
+
+    <h2>Hobi</h2>
+
+    <div class="image">
+      <img src="img/line-16.svg" alt="Line">
+    </div>
+
+    <ul>
+      <li>Menulis</li>
+      <li>Bersepeda</li>
+      <li>Badminton</li>
+      <li>Mendengarkan Musik</li>
+    </ul>
+
+  </section>
+
+  <!-- KONTAK -->
+  <section class="card" id="kontak">
+
+    <h2>Kontak</h2>
+
+    <div class="image">
+      <img src="img/line-19.svg" alt="Line">
+    </div>
+
+    <p>Telepon : 085731317819</p>
+    <p>Email : linatulfatimah5@gmail.com</p>
+    <p>Instagram : @LinLina123</p>
+
+  </section>
+
+  <!-- SKILL -->
+  <section class="card" id="skill">
+
+    <h2>Skill</h2>
+
+    <div class="image">
+      <img src="img/line-20.svg" alt="Line">
+    </div>
+
+    <ul>
+      <li>Fotografi</li>
+      <li>Desain Grafis</li>
+      <li>Editing Video</li>
+    </ul>
+
+  </section>
+
+  <section id="magang">
+  <h2>Pengalaman Magang</h2>
+
+   <div class="image">
+      <img src="img/line-22.svg" alt="Line">
+    </div>
+
+  <table border="1">
+    <tr>
+      <th>No</th>
+      <th>Perusahaan</th>
+      <th>Periode</th>
+      <th>Deskripsi</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>ARDYAH Photo Studio</td>
+      <td>15 Agustus 2023 - 15 Februari 2024</td>
+      <td>Pengambilan foto & Editing Foto</td>
+    </tr>
+  </table>
+</section>
+
+<!-- KEAHLIAN -->
+<section id="keahlian">
+  <h2>Keahlian</h2>
+ <div class="image">
+      <img src="img/line-23.svg" alt="Line">
+    </div>
+  <table border="1">
+    <tr>
+      <th>Keahlian</th>
+      <th>Progress</th>
+    </tr>
+
+    <tr>
+      <td>Desain Grafis</td>
+      <td>75%</td>
+    </tr>
+
+    <tr>
+      <td>Fotografi</td>
+      <td>75%</td>
+    </tr>
+  </table>
+</section>
+
+<!-- SOFTWARE -->
+<section id="software">
+  <h2>Kemampuan Software</h2>
+
+ <div class="image">
+      <img src="img/line-24.svg" alt="Line">
+    </div>
+
+  <table border="1">
+    <tr>
+      <th>Aplikasi</th>
+      <th>Level</th>
+    </tr>
+
+    <tr><td>Canva</td><td>Menengah</td></tr>
+    <tr><td>Corel Draw</td><td>Menengah</td></tr>
+    <tr><td>Blender</td><td>Menengah</td></tr>
+    <tr><td>Visual Studio Code</td><td>Menengah</td></tr>
+    <tr><td>Microsoft Office</td><td>Menengah</td></tr>
+  </table>
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan">
+  <h2>Riwayat Pendidikan</h2>
+
+ <div class="image">
+      <img src="img/line-25-2.svg" alt="Line">
+    </div>
+  <table border="1">
+    <tr>
+      <th>Jenjang</th>
+      <th>Institusi</th>
+      <th>Tahun</th>
+    </tr>
+
+    <tr>
+      <td>SMP</td>
+      <td>SMPN 1 Kalitengah</td>
+      <td>2018-2021</td>
+    </tr>
+
+    <tr>
+      <td>SMK</td>
+      <td>SMKN 1 Kalitengah</td>
+      <td>2021-2024</td>
+    </tr>
+
+    <tr>
+      <td>Kuliah</td>
+      <td>Politeknik Elektronika Negeri Surabaya</td>
+      <td>2024-Sekarang</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ORGANISASI -->
+<section id="organisasi">
+  <h2>Riwayat Organisasi</h2>
+ <div class="image">
+      <img src="img/line-25.svg" alt="Line">
+    </div>
+  <table border="1">
+    <tr>
+      <th>Organisasi</th>
+      <th>Jabatan</th>
+      <th>Tahun</th>
+    </tr>
+
+    <tr>
+      <td>Dewan Penggalang</td>
+      <td>Bendahara</td>
+      <td>2019-2021</td>
+    </tr>
+
+    <tr>
+      <td>OSIS</td>
+      <td>Anggota</td>
+      <td>2021-2022</td>
+    </tr>
+
+    <tr>
+      <td>Satgas PPK PENS</td>
+      <td>Anggota</td>
+      <td>2025-sekarang</td>
+    </tr>
+  </table>
+</section>
+
+<!-- LIST TUGAS -->
+<section class="card" id="list-tugas">
+
+  <h2>List Tugas</h2>
+
+  <div class="image">
+    <img src="img/line-22.svg" alt="Line">
+  </div>
+
+  <!-- INPUT ASLI DISEMBUNYIKAN -->
+  <input 
+    type="text"
+    id="taskInput"
+    placeholder="Masukkan tugas..."
+    class="hidden-input"
+  >
+
+  <input 
+    type="date"
+    id="taskDate"
+    class="hidden-input"
+  >
+  <div class="button-group">
+
+    <button class="btn" onclick="inputTask()">
+      <img src="img/Button_MT.svg" alt="Tambah Tugas">
+    </button>
+
+    <button class="btn" onclick="openDate()">
+      <img src="img/Button_Date.svg" alt="Deadline">
+    </button>
+
+  </div>
+
+  <!-- LIST -->
+  <ul id="taskList" class="task-list"></ul>
+
+</section>
+
+</section>
+  <!-- MOTIVASI -->
+  <section class="card" id="motivasi">
+
+    <h2>Motivasi</h2>
+
+    <div class="image">
+      <img src="img/line-22.svg" alt="Line">
+    </div>
+
+    <p>
+      "Masa depanmu ditentukan oleh apa yang kamu lakukan hari ini,
+      bukan besok."
+    </p>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © 2026 Linatul Fatimah
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
